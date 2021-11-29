@@ -1,0 +1,7 @@
+echo 'The connected displays are: '$(xrandr | grep " connected " | awk '{ print$1 }')' please choose one'
+read chosenConnector
+echo 'Chosen connector: ' $chosenConnector
+echo 'Choose brightness: '
+read chosenBrightness
+echo 'Display: '$chosenConnector' will be set to '$chosenBrightness
+xrandr --output $chosenConnector --brightness $chosenBrightness
